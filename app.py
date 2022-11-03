@@ -151,7 +151,7 @@ if option == 'Show data':
     st.markdown(get_table_download_link(df=diet, name='Dietary'), unsafe_allow_html=True)
 
 elif option == 'Anthropometric Analysis':
-    dropdown.remove('Select one')
+    #dropdown.remove('Select one')
     st.markdown("## Anthropometric Analysis")
     
     # if st.sidebar.checkbox('Gender wise distribution', False, key=1):
@@ -187,7 +187,7 @@ elif option == 'Anthropometric Analysis':
     st.plotly_chart(fig)
 
 elif option == 'Biochemical Analysis':
-    dropdown.remove('Select one')
+    #dropdown.remove('Select one')
     print(dropdown)
     st.markdown("## Biochemical Analysis")
     bmi = bio['Haemoglobin'].values
@@ -201,7 +201,7 @@ elif option == 'Biochemical Analysis':
     st.plotly_chart(fig)
 
 elif option == 'Clinical Analysis':
-    dropdown.remove('Select one')
+    #dropdown.remove('Select one')
     st.markdown("## Clinical Analysis")
 elif option == 'Analysis':
     body = st.container()
