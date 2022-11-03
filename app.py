@@ -171,6 +171,7 @@ elif option == 'Anthropometric Analysis':
         else:
             count3+=1
     fig = px.bar(x=['Less than 20', 'Between 20 and 60', 'Over 60'], y =[count1, count2, count3])
+    fig.update_layout(title="age vs count", xaxis_title="age", yaxis_title="count")
     st.plotly_chart(fig)
 
     # if st.sidebar.checkbox('BMI'):
@@ -184,6 +185,7 @@ elif option == 'Anthropometric Analysis':
         else:
             count3+=1
     fig = px.bar(x=['Less than 18', 'Between 19 and 29', 'Over 30'], y =[count1, count2, count3])
+    fig.update_layout(title="BMI Level vs count", xaxis_title="BMI level", yaxis_title="count")
     st.plotly_chart(fig)
 
 elif option == 'Biochemical Analysis':
