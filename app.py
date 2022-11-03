@@ -198,6 +198,7 @@ elif option == 'Biochemical Analysis':
         else:
             count2+=1
     fig = px.bar(x=['Less than 13', 'Over 13'], y =[count1, count2])
+    fig.update_layout(title="Haemoglobin vs count", xaxis_title="Haemoglobin level", yaxis_title="count")
     st.plotly_chart(fig)
 
 elif option == 'Clinical Analysis':
@@ -231,6 +232,7 @@ elif option == 'Clinical Analysis':
             count10+=1
     import plotly.express as px
     fig = px.bar(x=['1 symptom','2 symptom','3 symptom','4 symptom','5 symptom','6 symptom','7 symptom','8 symptom','9 symptom','10 symptom'], y =[count1, count2,count3,count4,count5,count6,count7,count8,count9,count10])
+    fig.update_layout(title="symptoms vs count", xaxis_title="symptoms", yaxis_title="count")
     st.plotly_chart(fig)
     
     option = st.selectbox(
