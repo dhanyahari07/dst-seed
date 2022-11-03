@@ -232,6 +232,12 @@ elif option == 'Clinical Analysis':
     import plotly.express as px
     fig = px.bar(x=['1 symptom','2 symptom','3 symptom','4 symptom','5 symptom','6 symptom','7 symptom','8 symptom','9 symptom','10 symptom'], y =[count1, count2,count3,count4,count5,count6,count7,count8,count9,count10])
     st.plotly_chart(fig)
+    
+    option = st.selectbox(
+    'Select the number of symptoms?',
+    ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10'))
+    st.write('You selected:', option)
+    st.write(clinic[(clinic['Total']==int(option)) & (clinic['Month']=='1-2022')].Aadhaar)
 elif option == 'Analysis':
     body = st.container()
     def fetch_FoodGroups():
