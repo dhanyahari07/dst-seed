@@ -203,6 +203,35 @@ elif option == 'Biochemical Analysis':
 elif option == 'Clinical Analysis':
     #dropdown.remove('Select one')
     st.markdown("## Clinical Analysis")
+    clinic['Total']= clinic.iloc[:, -28:-1].sum(axis=1)
+    bmi = clinic[clinic['Month']=='1-2022'].Total.values
+    count1 = count2 = count3=count4=count5=count6=count7=count8=count9=count10=0
+    for i in bmi:
+        if i ==1:
+            count1+=1
+        elif i==2:
+            count2+=1
+        elif i==2:
+            count2+=1
+        elif i==3:
+            count3+=1
+        elif i==4:
+            count4+=1
+        elif i==5:
+            count5+=1
+        elif i==6:
+            count6+=1
+        elif i==7:
+            count7+=1
+        elif i==8:
+            count8+=1
+        elif i==9:
+            count9+=1
+        elif i==10:
+            count10+=1
+    import plotly.express as px
+    fig = px.bar(x=['1 symptom','2 symptom','3 symptom','4 symptom','5 symptom','6 symptom','7 symptom','8 symptom','9 symptom','10 symptom'], y =[count1, count2,count3,count4,count5,count6,count7,count8,count9,count10])
+    st.plotly_chart(fig)
 elif option == 'Analysis':
     body = st.container()
     def fetch_FoodGroups():
