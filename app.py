@@ -208,10 +208,12 @@ elif option == 'Clinical Analysis':
     st.markdown("## Clinical Analysis")
     clinic['Total']= clinic.iloc[:, -28:-1].sum(axis=1)
     bmi = clinic[clinic['Month']=='1-2022'].Total.values
-    count1 = count2 = count3=count4=count5=count6=count7=count8=count9=count10=0
+    count0=count1 = count2 = count3=count4=count5=count6=count7=count8=count9=count10=0
     for i in bmi:
         if i ==1:
             count1+=1
+        elif i==0:
+            count0+=1        
         elif i==2:
             count2+=1
         elif i==2:
@@ -233,7 +235,7 @@ elif option == 'Clinical Analysis':
         elif i==10:
             count10+=1
     import plotly.express as px
-    fig = px.bar(x=['1 symptom','2 symptom','3 symptom','4 symptom','5 symptom','6 symptom','7 symptom','8 symptom','9 symptom','10 symptom'], y =[count1, count2,count3,count4,count5,count6,count7,count8,count9,count10])
+    fig = px.bar(x=['0 symptom','1 symptom','2 symptom','3 symptom','4 symptom','5 symptom','6 symptom','7 symptom','8 symptom','9 symptom','10 symptom'], y =[count0,count1, count2,count3,count4,count5,count6,count7,count8,count9,count10])
     fig.update_layout(title="symptoms vs count", xaxis_title="symptoms", yaxis_title="count")
     st.plotly_chart(fig)
     
