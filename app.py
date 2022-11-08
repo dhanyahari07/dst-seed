@@ -156,12 +156,14 @@ elif option == 'Anthropometric Analysis':
     
     # if st.sidebar.checkbox('Gender wise distribution', False, key=1):
     st.markdown('### Gender wise distribution')
-    fig = px.pie(values=anthro['Gender'].value_counts().values, names=anthro['Gender'].value_counts().index)
+    #fig = px.pie(values=anthro['Gender'].value_counts().values, names=anthro['Gender'].value_counts().index)
+    fig = px.pie(values=anthro[anthro['Month']=='1-2022'].Gender.value_counts().values, names=anthro[anthro['Month']=='1-2022'].Gender.value_counts().index)
     st.plotly_chart(fig)
 
     # if st.sidebar.checkbox('Age', False, key=1):
     st.markdown('### Age wise distribution')
-    ages = anthro['Age'].values
+    #ages = anthro['Age'].values
+    ages=anthro[anthro['Month']=='1-2022'].Age.values
     count1 = count2 = count3 = 0
     for age in ages:
         if age < 20:
@@ -175,7 +177,8 @@ elif option == 'Anthropometric Analysis':
     st.plotly_chart(fig)
 
     # if st.sidebar.checkbox('BMI'):
-    bmi = anthro['BMI'].values
+    #bmi = anthro['BMI'].values
+    bmi=anthro[anthro['Month']=='1-2022'].BMI.values
     count1 = count2 = count3 = 0
     for i in bmi:
         if i < 18:
@@ -192,7 +195,8 @@ elif option == 'Biochemical Analysis':
     #dropdown.remove('Select one')
     print(dropdown)
     st.markdown("## Biochemical Analysis")
-    bmi = bio['Haemoglobin'].values
+    bmi=bio[bio['Month']=='1-2022'].Haemoglobin.values
+    #bmi = bio['Haemoglobin'].values
     count1 = count2 = 0
     for i in bmi:
         if i < 13:
